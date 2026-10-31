@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Cosmic Nebula Day",
+  "version": "1.0",
+  "description": "Cloud theme from the COSMIC Nebula Day rice: sky icons, one teal accent.",
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "theme": {
+    "colors": {
+      "frame": [226, 229, 233],
+      "frame_inactive": [226, 229, 233],
+      "frame_incognito": [226, 229, 233],
+      "frame_incognito_inactive": [226, 229, 233],
+      "background_tab": [226, 229, 233],
+      "background_tab_inactive": [226, 229, 233],
+      "background_tab_incognito": [226, 229, 233],
+      "background_tab_incognito_inactive": [226, 229, 233],
+      "toolbar": [241, 243, 246],
+      "tab_text": [24, 106, 97],
+      "tab_background_text": [29, 103, 120],
+      "tab_background_text_inactive": [29, 103, 120],
+      "tab_background_text_incognito": [29, 103, 120],
+      "tab_background_text_incognito_inactive": [29, 103, 120],
+      "bookmark_text": [43, 47, 53],
+      "toolbar_button_icon": [29, 103, 120],
+      "omnibox_background": [206, 209, 212],
+      "omnibox_text": [43, 47, 53],
+      "ntp_background": [226, 229, 233],
+      "ntp_text": [43, 47, 53],
+      "ntp_link": [24, 106, 97]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "Cosmic Nebula Day",
+  "version": "1.0",
+  "description": "Cloud theme from the COSMIC Nebula Day rice: sky icons, one teal accent.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{32adc6ac-b845-491c-a627-1319028bfd59}"
+    }
+  },
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "64": "icons/icon-64.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "theme": {
+    "colors": {
+      "toolbar": "#F1F3F6",
+      "toolbar_text": "#2b2f35",
+      "frame": "#E2E5E9",
+      "tab_background_text": "#1d6778",
+      "tab_text": "#186a61",
+      "toolbar_field": "#ced1d4",
+      "toolbar_field_text": "#2b2f35",
+      "toolbar_field_border_focus": "#186A61",
+      "toolbar_field_highlight": "#186A61",
+      "toolbar_field_highlight_text": "#E2E5E9",
+      "tab_line": "#186A61",
+      "popup": "#F1F3F6",
+      "popup_text": "#2b2f35",
+      "button_background_active": "#186A61",
+      "button_background_hover": "#ced1d4",
+      "frame_inactive": "#E2E5E9",
+      "icons_attention": "#186A61",
+      "icons": "#1d6778",
+      "ntp_background": "#E2E5E9",
+      "ntp_text": "#2b2f35",
+      "popup_border": "#31469B",
+      "popup_highlight_text": "#E2E5E9",
+      "popup_highlight": "#186A61",
+      "sidebar_border": "#ced1d4",
+      "sidebar_highlight_text": "#E2E5E9",
+      "sidebar_highlight": "#186A61",
+      "sidebar_text": "#2b2f35",
+      "tab_loading": "#186A61"
+    }
+  }
+}

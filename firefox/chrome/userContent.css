@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Nebula Day - userContent.css
+   Ported from the DarkGold baseline, recoloured for the COSMIC Nebula Day palette
+
+   New tab / home / private pages only:
+     - teal accent and focus, periwinkle links
+     - teal focus ring on shortcut tiles, teal personalize button
+     - shortcut artwork hidden (tiles stay, icons go blank)
+   No size / position changes.
+
+   Install:  chrome/userContent.css   (same pref + restart as userChrome.css)
+   ========================================================================== */
+
+@-moz-document url-prefix("about:newtab"),
+               url-prefix("about:home"),
+               url-prefix("about:privatebrowsing") {
+
+  :root {
+    --newtab-primary-action-background: #186A61 !important;
+    --newtab-primary-action-background-dimmed: rgba(24, 106, 97, 0.25) !important;
+
+    --color-accent-primary: #186A61 !important;
+    --color-accent-primary-hover: #12514A !important;
+    --color-accent-primary-active: #186A61 !important;
+
+    --newtab-focus-border: #186A61 !important;
+    --newtab-focus-outline: #186A61 !important;
+    --newtab-textbox-focus-color: #186A61 !important;
+
+    --in-content-accent-color: #186A61 !important;
+    --in-content-accent-color-active: #1D6778 !important;
+    --in-content-focus-outline-color: #186A61 !important;
+
+    --link-color: #31469B !important;
+    --link-color-hover: #1F2329 !important;
+
+    --focus-outline-color: #186A61 !important;
+    --focus-outline: 2px solid #186A61 !important;
+    --newtab-button-focus-border: #186A61 !important;
+    --button-background-color: #186A61 !important;
+    --button-text-color: #E2E5E9 !important;
+  }
+
+  .top-site-outer:is(:focus, :focus-visible, .active) .tile,
+  .top-site-outer .top-site-button:focus .tile,
+  .top-site-outer .top-site-button:focus-visible .tile {
+    outline: 2px solid #186A61 !important;
+    border-color: #186A61 !important;
+  }
+
+  .personalize-button {
+    background-color: #186A61 !important;
+    color: #E2E5E9 !important;
+  }
+
+  /* Hide shortcut artwork so tiles stay blank */
+  .top-site-icon,
+  .top-site-icon.rich-icon,
+  .top-site-icon.default-icon,
+  .screenshot,
+  .screenshot.active,
+  .letter-fallback {
+    background-image: none !important;
+    background-color: transparent !important;
+    opacity: 0 !important;
+  }
+}
