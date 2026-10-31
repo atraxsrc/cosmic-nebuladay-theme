@@ -1,0 +1,41 @@
+# 256-colour codes nearest the Nebula Day palette on cloud (lsd 1.0.0 does not accept
+# #hex here): 23 teal, 125 rose, 94 apricot, 24 sky, 60 lilac,
+# 60 periwinkle, 241 fog, 103 dusk.
+user: 60
+group: 241
+permission:
+  read: 241
+  write: 60
+  exec: 23
+  exec-sticky: 23
+  no-access: 103
+  octal: 60
+  acl: 60
+  context: 60
+date:
+  hour-old: 60
+  day-old: 24
+  older: 103
+size:
+  none: 103
+  small: 24
+  medium: 60
+  large: 125
+inode:
+  valid: 24
+  invalid: 125
+links:
+  valid: 60
+  invalid: 125
+tree-edge: 103
+git-status:
+  default: 103
+  unmodified: 103
+  ignored: 103
+  new-in-index: 24
+  new-in-workdir: 24
+  typechange: 60
+  deleted: 125
+  renamed: 60
+  modified: 94
+  conflicted: 125
