@@ -6,7 +6,8 @@
 
 Pop!_OS 24.04 on COSMIC in cloud, charcoal and teal: desktop, terminal,
 shell, Firefox, Brave, cursor, wallpapers. A light rice in violet and sky;
-rose is kept for what is wrong.
+rose is kept for what is wrong. The light half of a pair;
+the dark half is [cosmic-nebula-theme](https://github.com/atraxsrc/cosmic-nebula-theme).
 
 ![Pop!_OS](https://img.shields.io/badge/Pop!_OS-24.04_LTS-186a61?style=for-the-badge&logo=popos&logoColor=white)
 ![COSMIC](https://img.shields.io/badge/COSMIC-1.0.0-1d6778?style=for-the-badge)
@@ -41,6 +42,14 @@ text colour is at least 4.5:1 on the window background.
 | Dim | ![#858ea2](https://placehold.co/12x12/858ea2/858ea2.png) Comments | ![#858EA2](https://placehold.co/12x12/858ea2/858ea2.png) `#858EA2` |
 | Lines | ![#a6a8ab](https://placehold.co/12x12/a6a8ab/a6a8ab.png) Box lines, inactive | ![#A6A8AB](https://placehold.co/12x12/a6a8ab/a6a8ab.png) `#A6A8AB` |
 
+| Role | Nebula Day | Nebula |
+|------|---|---|
+| Background | ![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9` | ![#181C22](https://placehold.co/12x12/181c22/181c22.png) `#181C22` |
+| Text | ![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35` | ![#E0E6ED](https://placehold.co/12x12/e0e6ed/e0e6ed.png) `#E0E6ED` |
+| Accent | ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61` | ![#4ECDC4](https://placehold.co/12x12/4ecdc4/4ecdc4.png) `#4ECDC4` |
+| Success | ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778` | ![#82EEFF](https://placehold.co/12x12/82eeff/82eeff.png) `#82EEFF` |
+| Error | ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B` | ![#FF7B92](https://placehold.co/12x12/ff7b92/ff7b92.png) `#FF7B92` |
+
 The accent is teal, 5.1:1 on the background and 5.8:1 on a container,
 so it stays the same colour wherever it is text; buttons and selections
 carry it with cloud-white text on top.
@@ -57,7 +66,7 @@ carry it with cloud-white text on top.
 ├── btop
 │   └── NebulaDay.theme                 # btop colour theme
 ├── claude-desktop
-│   ├── cosmic-nebuladay.jsonc          # Claude Desktop theme (claude-desktop-extra)
+│   ├── cosmic-nebula.jsonc          # Claude Desktop theme (claude-desktop-extra)
 │   └── install.sh
 ├── cosmic
 │   ├── NebulaDay.ron                   # COSMIC Appearance import (Dark)
@@ -96,7 +105,7 @@ carry it with cloud-white text on top.
 │   ├── cosmic-nebuladay.tdesktop-theme # built theme, open this in Telegram
 │   └── build.sh                 # rebuilds it, optionally with a wallpaper
 ├── vscode
-│   ├── themes/                  # Cursor / VS Code colour theme, Cosmic Nebula Day
+│   ├── themes/                  # Cursor / VS Code colour themes, Nebula (dark) + Nebula Day (light)
 │   ├── package.json             # extension manifest
 │   ├── install.sh               # packs a .vsix, installs it with cursor --install-extension
 │   └── README.md
@@ -134,6 +143,11 @@ applets and system UI (maximized apps stay solid), and corners are squared
 Appearance → Style → Frosted glass after import; those sliders survive a theme switch.
 
 Export from Appearance if you tweak backgrounds / tints so you do not lose them.
+
+Pairing tip: import `Nebula.ron` from
+[cosmic-nebula-theme](https://github.com/atraxsrc/cosmic-nebula-theme) into the
+Dark slot and COSMIC's Dark / Light toggle flips between the two. Wallpaper,
+Firefox and the shell layer do not follow the toggle; those are per-rice files.
 
 Nebula Day fills the Dark slot only. Put any other rice's light `.ron` in the Light
 slot and COSMIC's Dark / Light toggle flips between the two. Wallpaper,
@@ -230,9 +244,10 @@ packing a `.crx`: [`brave/README.md`](brave/README.md).
 ## Claude Desktop
 
 For the unofficial [claude-desktop-extra](https://github.com/patrickjaja/claude-desktop-extra)
-Linux build. `claude-desktop/cosmic-nebuladay.jsonc` carries the Nebula Day palette in
-both of the file's blocks, so Claude's own Settings → Appearance toggle makes
-no difference. Colours come from `cosmic/NebulaDay.ron`, contrast-checked (text and
+Linux build. `claude-desktop/cosmic-nebula.jsonc` is one theme with both halves:
+Nebula in dark mode and Nebula Day in light mode, so Claude's own
+Settings → Appearance toggle switches between the two rices.
+Colours come from `cosmic/*.ron`, contrast-checked (text and
 button text 4.5:1, accents 3:1).
 
 ```bash
@@ -240,19 +255,23 @@ button text 4.5:1, accents 3:1).
 ```
 
 It copies the file into `~/.config/Claude/themes.d/`. Then press
-<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> in Claude Desktop and pick **cosmic-nebuladay**.
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> in Claude Desktop and pick **cosmic-nebula**.
+
+The same file ships in [`cosmic-nebula-theme`](https://github.com/atraxsrc/cosmic-nebula-theme),
+so installing from either repo gives the same theme.
 
 ---
 
 ## Cursor editor
 
-`vscode/` is a colour theme extension for [Cursor](https://cursor.com):
-**Cosmic Nebula Day**. It is a plain VS Code theme extension, so VS Code and VSCodium
-take it too. Code is coloured the way Neovim is in the rice; the workbench is
-cloud with vapour menus, hovers and inputs, teal on the active tab, buttons
-and menu highlight, and the integrated terminal uses the COSMIC Terminal
-scheme. Cursor builds its Agent and chat panels from the same theme colours,
-so they follow along.
+`vscode/` is a colour theme extension for [Cursor](https://cursor.com) with
+both halves of the pair: **Cosmic Nebula** and **Cosmic Nebula Day**. It is a
+plain VS Code theme extension, so VS Code and VSCodium take it too, and the
+same extension ships in cosmic-nebula-theme. Code is coloured the way Neovim
+is in the rice; the workbench is cloud with vapour menus, hovers and inputs,
+teal on the active tab, buttons and menu highlight, and the integrated
+terminal uses the COSMIC Terminal scheme. Cursor builds its Agent and chat
+panels from the same theme colours, so they follow along.
 
 ```bash
 ./vscode/install.sh
@@ -261,8 +280,9 @@ so they follow along.
 It packs `vscode/` into a `.vsix` and installs it with
 `cursor --install-extension`; run it again after editing the theme. Then press
 <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>Ctrl</kbd>+<kbd>T</kbd> in Cursor and pick
-**Cosmic Nebula Day**. The colours and the contrast notes are in
-[`vscode/README.md`](vscode/README.md).
+**Cosmic Nebula Day**. Three lines in Cursor's `settings.json` make it follow
+COSMIC's Dark / Light toggle between Nebula and Nebula Day; they, the colours and
+the contrast notes are in [`vscode/README.md`](vscode/README.md).
 
 ---
 
@@ -290,6 +310,9 @@ background is plain cloud; to put a wallpaper behind the chat instead
 
 Built against Telegram Desktop 7.3.1. Calls, group calls, statistics charts and
 premium badges keep Telegram's own colours.
+
+Telegram has no dark / light pairing, so Nebula, the dark half, ships its
+own theme.
 
 ---
 
@@ -529,11 +552,16 @@ The GUI steps it cannot do are printed at the end:
 2. COSMIC Terminal → View → Color schemes → Dark tab → Import `cosmic-term/NebulaDay-term.ron`
 3. Firefox: disable the old rice's add-on, enable this one, restart Firefox
 4. Settings → Wallpaper → a file from `backgrounds/`
-5. Claude Desktop: Ctrl+Shift+T → `cosmic-nebuladay`
+5. Claude Desktop: Ctrl+Shift+T → `cosmic-nebula`, Appearance → Light
 6. `exec zsh`, restart Neovim (`:Lazy clean` drops plugins only the old specs used)
 
 Skip 1 and 2 when that slot already holds Nebula Day. The first time on this rice,
 run [Setup](#setup) once for the fonts, icons and cursor.
+
+**Within the pair** (Nebula Day ↔ [Nebula](https://github.com/atraxsrc/cosmic-nebula-theme)): the two halves
+sit side by side in COSMIC's Dark and Light slots and share one Claude Desktop
+theme, so after the first time only the Firefox add-on and the wallpaper are
+left by hand. Add `--keep-icons` to keep one icon colour across the pair.
 
 Leaving Nebula Day is the next rice's `./scripts/switch.sh`. `./cursors/uninstall.sh`
 puts the Pop cursor back.
