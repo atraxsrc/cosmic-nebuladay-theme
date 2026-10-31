@@ -10,7 +10,7 @@ All patched so they work in COSMIC's own apps.
 | ------- | ------- | ---- | ------------------- | --------- |
 | **Teal** (default) | ![](../assets/cursors/Oxygen-NebulaDay-Teal.png) | ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61` | 5.1:1 | Teal folders |
 | **Rose** | ![](../assets/cursors/Oxygen-NebulaDay-Rose.png) | ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B` | 5.6:1 | Rose folders |
-| **Dark** | ![](../assets/cursors/Oxygen-NebulaDay-Dark.png) | ![#D8DBDF](https://placehold.co/12x12/d8dbdf/d8dbdf.png) `#D8DBDF` | 1.1:1 | Dark folders |
+| **Dark** | ![](../assets/cursors/Oxygen-NebulaDay-Dark.png) | ![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35` | 10.6:1 | Dark folders |
 
 Each variant is a normal folder here (`Oxygen-NebulaDay-<Variant>/index.theme` + `cursors/`),
 already fixed for COSMIC. Nothing is downloaded at install time.
