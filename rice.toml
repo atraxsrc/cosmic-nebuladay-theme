@@ -1,0 +1,6 @@
+name = "NebulaDay"
+mode = "light"
+theme = "NebulaDay.ron"
+pair = "nebula"
+terminal = "NebulaDay-term.ron"
+btop = "NebulaDay"
