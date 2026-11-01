@@ -136,7 +136,7 @@ carry it with cloud-white text on top.
 │   ├── NebulaDay.conf           # qt5ct / qt6ct colour scheme
 │   └── install.sh
 ├── starship
-│   ├── starship.toml            # prompt, palette colours, clock on the right
+│   ├── starship.toml            # prompt, palette colours
 │   └── install.sh
 ├── telegram
 │   ├── colors.tdesktop-theme    # Telegram Desktop colour scheme (source)
@@ -518,8 +518,7 @@ kitty and Alacritty have no such switch; include the other file instead.
 `starship/starship.toml` is close to the defaults with the palette declared
 once as `[palettes.nebuladay]` and used by name: the directory in ![#31469B](https://placehold.co/12x12/31469b/31469b.png) `#31469B`,
 the branch in ![#604686](https://placehold.co/12x12/604686/604686.png) `#604686`, ![#914C27](https://placehold.co/12x12/914c27/914c27.png) `#914C27` for a dirty tree, a ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778` prompt
-character that turns ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B` after a failed command, a dim `HH:MM` clock on
-the right. Modules it does not style keep their defaults, which use the ANSI
+character that turns ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B` after a failed command. Modules it does not style keep their defaults, which use the ANSI
 slots the COSMIC Terminal scheme colours. `zsh/nebuladay.zsh` already runs
 `starship init`. `install.sh` backs up any existing `~/.config/starship.toml`
 to `starship.toml.bak`.
