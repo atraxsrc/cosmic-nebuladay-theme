@@ -453,7 +453,7 @@ Add `--system` to install to `/usr/share/icons` instead, for every user and the
 login screen (asks for sudo); `--user` is the default.
 
 Wallpapers ship in [`backgrounds/`](backgrounds/), named `nebuladay-<subject>`:
-the same five scenes as Nebula, in blue and violet: a girl with blue hair
+the same five scenes as Nebula, lifted into Nebula Day's light key, in blue and violet: a girl with blue hair
 under the stars, an aurora over a lake, a citadel in snow, ink curling in
 water and a neon frame, plus the anime portrait from the screenshot
 (`nebuladay-anime.png`) in the palette's own tones. The girl
