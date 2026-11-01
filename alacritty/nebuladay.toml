@@ -1,0 +1,80 @@
+# NebulaDay for Alacritty, part of cosmic-nebuladay-theme (MIT).
+# Colours follow the COSMIC Terminal scheme (cosmic-term/).
+#
+# Install: ./alacritty/install.sh puts this in ~/.config/alacritty/themes/,
+# then in ~/.config/alacritty/alacritty.toml:
+#   [general]
+#   import = ["~/.config/alacritty/themes/nebuladay.toml"]
+# (Alacritty 0.13: a top-level `import = [...]` line instead.)
+
+[colors.primary]
+background = "#E2E5E9"
+foreground = "#2B2F35"
+bright_foreground = "#1F2329"
+dim_foreground = "#555F72"
+
+[colors.cursor]
+text = "#E2E5E9"
+cursor = "#186A61"
+
+[colors.vi_mode_cursor]
+text = "#E2E5E9"
+cursor = "#914C27"
+
+[colors.selection]
+text = "CellForeground"
+background = "#CED1D4"
+
+[colors.search.matches]
+foreground = "#E2E5E9"
+background = "#604686"
+
+[colors.search.focused_match]
+foreground = "#E2E5E9"
+background = "#186A61"
+
+[colors.hints.start]
+foreground = "#E2E5E9"
+background = "#914C27"
+
+[colors.hints.end]
+foreground = "#E2E5E9"
+background = "#604686"
+
+[colors.footer_bar]
+foreground = "#2B2F35"
+background = "#F1F3F6"
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.normal]
+black   = "#D8DBDF"
+red     = "#A8243B"
+green   = "#1D6778"
+yellow  = "#604686"
+blue    = "#186A61"
+magenta = "#914C27"
+cyan    = "#1D6778"
+white   = "#4A5059"
+
+[colors.bright]
+black   = "#858EA2"
+red     = "#861D2F"
+green   = "#164E5B"
+yellow  = "#523C72"
+blue    = "#12514A"
+magenta = "#713B1E"
+cyan    = "#603598"
+white   = "#1F2329"
+
+[colors.dim]
+black   = "#E2E5E9"
+red     = "#D63E58"
+green   = "#2B98B2"
+yellow  = "#886CB2"
+blue    = "#31449B"
+magenta = "#CB703E"
+cyan    = "#278AA1"
+white   = "#515A6C"

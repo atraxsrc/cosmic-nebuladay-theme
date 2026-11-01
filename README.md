@@ -60,6 +60,13 @@ carry it with cloud-white text on top.
 
 ```
 .
+├── alacritty
+│   ├── nebuladay.toml           # Alacritty colour scheme
+│   └── install.sh
+├── bat
+│   ├── NebulaDay.tmTheme        # bat syntax theme (delta uses it too)
+│   ├── config                   # --theme="NebulaDay"
+│   └── install.sh
 ├── brave
 │   ├── theme                    # Chromium theme (manifest + icons), Load unpacked
 │   └── README.md
@@ -82,6 +89,21 @@ carry it with cloud-white text on top.
 │   ├── install.sh
 │   ├── uninstall.sh
 │   └── README.md
+├── delta
+│   ├── nebuladay.gitconfig      # delta (git pager) colours, [include] it from ~/.gitconfig
+│   └── install.sh
+├── discord
+│   ├── cosmic-nebula.theme.css  # Vencord / Vesktop theme, Nebula (dark) + Nebula Day (light)
+│   └── install.sh
+├── ghostty
+│   ├── NebulaDay                # Ghostty theme
+│   └── install.sh
+├── gtk
+│   ├── nebuladay.css            # GTK 3 / 4 named colours for non-COSMIC apps
+│   └── install.sh
+├── helix
+│   ├── nebuladay.toml           # Helix theme
+│   └── install.sh
 ├── icons
 │   └── install.sh               # Cosmic-NebulaDay icon pack from cosmic-icon-themes
 ├── fastfetch
@@ -95,11 +117,26 @@ carry it with cloud-white text on top.
 │   │   └── userContent.css      # new tab accent
 │   ├── install.sh
 │   └── README.md
+├── kitty
+│   ├── NebulaDay.conf           # kitty colour scheme
+│   └── install.sh
+├── lazygit
+│   ├── nebuladay.yml            # lazygit colours only, stacked on your config.yml
+│   └── install.sh
 ├── lsd
 │   ├── config.yaml              # theme: custom
 │   ├── colors.yaml              # permission / size / date / git columns
 │   └── install.sh
 ├── nvim                         # Neovim colorscheme, LazyVim spec, RON syntax, install.sh
+├── obsidian
+│   ├── cosmic-nebula.css        # CSS snippet, Nebula (dark) + Nebula Day (light)
+│   └── install.sh
+├── qt
+│   ├── NebulaDay.conf           # qt5ct / qt6ct colour scheme
+│   └── install.sh
+├── starship
+│   ├── starship.toml            # prompt, palette colours, clock on the right
+│   └── install.sh
 ├── telegram
 │   ├── colors.tdesktop-theme    # Telegram Desktop colour scheme (source)
 │   ├── cosmic-nebuladay.tdesktop-theme # built theme, open this in Telegram
@@ -112,8 +149,11 @@ carry it with cloud-white text on top.
 ├── scripts
 │   ├── update_system.sh         # nala + flatpak, teal / sky ANSI
 │   └── switch.sh                # make this the active rice (see Switching rice)
+├── wezterm
+│   ├── nebuladay.lua            # WezTerm colours, config.colors = require("nebuladay")
+│   └── install.sh
 ├── zsh
-│   ├── nebuladay.zsh                   # LS_COLORS, highlighting colours, aliases, starship
+│   ├── nebuladay.zsh                   # LS_COLORS, highlighting colours, aliases, starship, lazygit
 │   └── install.sh
 ├── assets
 │   ├── cursors/                 # cursor preview
@@ -314,6 +354,90 @@ own theme.
 
 ---
 
+## GTK and Qt apps
+
+COSMIC colours GTK apps itself when Appearance → **Apply theme to GNOME apps**
+is on (the baseline config turns it on). `gtk/nebuladay.css` is the same palette
+pinned by hand for GTK 3 and GTK 4 / libadwaita apps: windows and lists on
+![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9`, cards, popovers and dialogs on ![#F1F3F6](https://placehold.co/12x12/f1f3f6/f1f3f6.png) `#F1F3F6`, text in ![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35`, selection
+and accent in ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61` with ![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9` text on it, ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778` for
+success and ![#914C27](https://placehold.co/12x12/914c27/914c27.png) `#914C27` for warnings. It only sets the named colours, so
+widgets keep their stock shapes, and it also works where COSMIC's toggle does
+not reach (another desktop, Flatpak apps given access to `~/.config/gtk-4.0`).
+
+```bash
+./gtk/install.sh
+```
+
+It copies the file to `~/.config/gtk-3.0/` and `~/.config/gtk-4.0/` and adds
+`@import url("nebuladay.css");` to `gtk.css` there, after COSMIC's own import so
+these colours win (backup in `gtk.css.bak`); another rice's import is
+commented out. Restart GTK apps.
+
+`qt/NebulaDay.conf` is a colour scheme for [qt5ct](https://github.com/desktop-app/qt5ct)
+/ [qt6ct](https://github.com/trialuser02/qt6ct): windows on ![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9`, text
+fields and lists on ![#F1F3F6](https://placehold.co/12x12/f1f3f6/f1f3f6.png) `#F1F3F6`, buttons and tooltips on ![#F1F3F6](https://placehold.co/12x12/f1f3f6/f1f3f6.png) `#F1F3F6`, text in
+![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35`, ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61` for the highlight and links, placeholders in ![#555F72](https://placehold.co/12x12/555f72/555f72.png) `#555F72`,
+disabled text in ![#858EA2](https://placehold.co/12x12/858ea2/858ea2.png) `#858EA2`.
+
+```bash
+./qt/install.sh
+# qt6ct → Appearance → Color scheme → NebulaDay, Palette: Custom → Apply
+```
+
+Qt apps read it with `QT_QPA_PLATFORMTHEME=qt6ct` (or `qt5ct`) in the
+environment; `~/.config/environment.d/` or your `~/.zshrc` is the place.
+
+Text and secondary text read at 6.1:1 or better on the window, container and
+field colours; disabled, placeholder and dim text, like comments elsewhere in
+the rice, at 2.6:1.
+
+---
+
+## Obsidian
+
+`obsidian/cosmic-nebula.css` is a CSS snippet with both halves of the pair:
+Nebula in dark mode, Nebula Day in light mode, so with Settings →
+Appearance → Base color scheme → **Adapt to system** Obsidian follows COSMIC's
+Dark / Light toggle. Editor on ![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9`, sidebars on ![#F1F3F6](https://placehold.co/12x12/f1f3f6/f1f3f6.png) `#F1F3F6`, text in ![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35`,
+links and accent in ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61`, headings coloured like Neovim's
+(![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61` / ![#604686](https://placehold.co/12x12/604686/604686.png) `#604686` / ![#31469B](https://placehold.co/12x12/31469b/31469b.png) `#31469B`), code and checkboxes in ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778`, tags
+in ![#604686](https://placehold.co/12x12/604686/604686.png) `#604686`. The same file ships in cosmic-nebula-theme.
+
+```bash
+./obsidian/install.sh ~/path/to/vault
+# Settings → Appearance → CSS snippets → cosmic-nebula
+```
+
+It copies the file into the vault's `.obsidian/snippets/`. Snippets are per
+vault, so run it once per vault.
+
+---
+
+## Discord
+
+`discord/cosmic-nebula.theme.css` is a theme for [Vencord](https://vencord.dev/)
+and [Vesktop](https://github.com/Vencord/Vesktop), colours only: chat on
+![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9`, sidebars and inputs on ![#F1F3F6](https://placehold.co/12x12/f1f3f6/f1f3f6.png) `#F1F3F6`, server list on ![#D8DBDF](https://placehold.co/12x12/d8dbdf/d8dbdf.png) `#D8DBDF`, text in
+![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35`, channel names in ![#31469B](https://placehold.co/12x12/31469b/31469b.png) `#31469B`, accent, mentions and links in
+![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61`, ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778` for online and positive, ![#914C27](https://placehold.co/12x12/914c27/914c27.png) `#914C27` for
+warnings. The light half is Nebula Day and the dark half Nebula, so
+with Appearance → Theme → **Sync with computer** it follows COSMIC's toggle.
+The same file ships in cosmic-nebula-theme.
+
+```bash
+./discord/install.sh
+# Settings → Vencord → Themes → Cosmic Nebula
+```
+
+It copies the file into `~/.config/Vencord/themes/` and
+`~/.config/vesktop/themes/`, whichever exist. Discord renames its CSS
+variables now and then; the file sets both the long-standing names and the
+2025 `--bg-*` set. Text on the surfaces is 6.1:1 or better; the text on
+Discord's own accent-coloured buttons stays its white, at 6.4:1.
+
+---
+
 ## Cursor
 
 **Oxygen** cursors recoloured to the icon colours, one per folder colour of the
@@ -360,12 +484,125 @@ Makes this the active rice, coming from any other `cosmic-*-theme` rice. See
 Need a [Nerd Font](https://www.nerdfonts.com/) in the terminal for the icons
 (Maple Mono NFM in the baseline above).
 
+### kitty, Alacritty, WezTerm, Ghostty
+
+The COSMIC Terminal scheme for other terminals, one file each with the same
+sixteen ANSI colours, text in ![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35`, the cursor in ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61` and the
+selection on ![#CED1D4](https://placehold.co/12x12/ced1d4/ced1d4.png) `#CED1D4`. Each installer copies the file next to that terminal's
+config and backs up what it replaces; the one include line you add is
+printed, and is in the comment at the top of each file:
+
+```bash
+./kitty/install.sh        # ~/.config/kitty/themes/NebulaDay.conf       kitty.conf:     include themes/NebulaDay.conf
+./alacritty/install.sh    # ~/.config/alacritty/themes/nebuladay.toml   alacritty.toml: [general] import = ["~/.config/alacritty/themes/nebuladay.toml"]
+./wezterm/install.sh      # ~/.config/wezterm/nebuladay.lua             wezterm.lua:    config.colors = require("nebuladay")
+./ghostty/install.sh      # ~/.config/ghostty/themes/NebulaDay          config:         theme = NebulaDay
+```
+
+Ghostty and WezTerm can follow COSMIC's Dark / Light toggle once the Nebula
+half is installed from its repo as well: `theme = dark:Nebula,light:NebulaDay` in
+Ghostty, and in WezTerm
+
+```lua
+local dark = (wezterm.gui and wezterm.gui.get_appearance() or "Dark"):find("Dark")
+config.colors = require(dark and "nebula" or "nebuladay")
+```
+
+kitty and Alacritty have no such switch; include the other file instead.
+
+### starship
+
+`starship/starship.toml` is close to the defaults with the palette declared
+once as `[palettes.nebuladay]` and used by name: the directory in ![#31469B](https://placehold.co/12x12/31469b/31469b.png) `#31469B`,
+the branch in ![#604686](https://placehold.co/12x12/604686/604686.png) `#604686`, ![#914C27](https://placehold.co/12x12/914c27/914c27.png) `#914C27` for a dirty tree, a ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778` prompt
+character that turns ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B` after a failed command, a dim `HH:MM` clock on
+the right. Modules it does not style keep their defaults, which use the ANSI
+slots the COSMIC Terminal scheme colours. `zsh/nebuladay.zsh` already runs
+`starship init`. `install.sh` backs up any existing `~/.config/starship.toml`
+to `starship.toml.bak`.
+
+```bash
+./starship/install.sh
+```
+
+### bat
+
+`bat/NebulaDay.tmTheme` is a syntax theme coloured the way Neovim is in this
+rice: keywords in ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61`, strings in ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778`, functions in ![#604686](https://placehold.co/12x12/604686/604686.png) `#604686`, numbers
+in ![#914C27](https://placehold.co/12x12/914c27/914c27.png) `#914C27`, types in ![#31469B](https://placehold.co/12x12/31469b/31469b.png) `#31469B`, imports and escapes in ![#603598](https://placehold.co/12x12/603598/603598.png) `#603598`, italic
+comments in ![#858EA2](https://placehold.co/12x12/858ea2/858ea2.png) `#858EA2`, on the editor background ![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9`. `zsh/nebuladay.zsh`
+aliases `cat` to bat. `install.sh` copies the theme to `~/.config/bat/themes/`,
+rebuilds bat's cache so bat and delta can find it, and sets `--theme="NebulaDay"`
+in `~/.config/bat/config` (backup in `config.bak`).
+
+```bash
+./bat/install.sh
+batcat README.md
+```
+
+### delta
+
+`delta/nebuladay.gitconfig` colours [delta](https://github.com/dandavison/delta),
+the git diff pager: removed lines in ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B` and added lines in
+![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778` on the container ![#F1F3F6](https://placehold.co/12x12/f1f3f6/f1f3f6.png) `#F1F3F6`, changed words on a solid block of
+those two colours with ![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9` text, the same as Neovim's diff highlights;
+file names in ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61`, commit hashes in ![#604686](https://placehold.co/12x12/604686/604686.png) `#604686`, hunk headers in
+![#31469B](https://placehold.co/12x12/31469b/31469b.png) `#31469B` inside ![#CED1D4](https://placehold.co/12x12/ced1d4/ced1d4.png) `#CED1D4` boxes, line numbers. Code inside the diff
+uses the bat theme above, so install that first. `install.sh` copies the file
+to `~/.config/delta/` and prints the `[include]` to add to `~/.gitconfig`; it
+never edits that file.
+
+```bash
+./delta/install.sh
+```
+
+```ini
+# ~/.gitconfig
+[include]
+    path = ~/.config/delta/nebuladay.gitconfig
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+```
+
+### lazygit
+
+`lazygit/nebuladay.yml` holds only the `gui.theme` block: active border in
+![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61`, inactive borders in ![#CED1D4](https://placehold.co/12x12/ced1d4/ced1d4.png) `#CED1D4`, the selected line on ![#D8DBDF](https://placehold.co/12x12/d8dbdf/d8dbdf.png) `#D8DBDF`,
+![#604686](https://placehold.co/12x12/604686/604686.png) `#604686` and ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778` marks for cherry-picked and base commits,
+unstaged changes in ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B`, author names in ![#604686](https://placehold.co/12x12/604686/604686.png) `#604686`. lazygit reads one
+config file, so instead of replacing your `~/.config/lazygit/config.yml` the
+installer drops the theme beside it and `zsh/nebuladay.zsh` sets `LG_CONFIG_FILE`
+to both, your file first, so the colours win and your keybindings stay.
+
+```bash
+./lazygit/install.sh
+exec zsh
+```
+
+Without the zsh layer, export it yourself:
+`LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/nebuladay.yml"`.
+
+### Helix
+
+`helix/nebuladay.toml` is the Neovim colorscheme for [Helix](https://helix-editor.com/):
+same syntax roles, editor on ![#E2E5E9](https://placehold.co/12x12/e2e5e9/e2e5e9.png) `#E2E5E9`, status line and popups on ![#F1F3F6](https://placehold.co/12x12/f1f3f6/f1f3f6.png) `#F1F3F6`,
+cursor and current line number in ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61`, the mode shown as a solid
+![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61` / ![#1D6778](https://placehold.co/12x12/1d6778/1d6778.png) `#1D6778` / ![#604686](https://placehold.co/12x12/604686/604686.png) `#604686` block. `install.sh` copies it to
+`~/.config/helix/themes/`.
+
+```bash
+./helix/install.sh
+# ~/.config/helix/config.toml:  theme = "nebuladay"
+```
+
 ### zsh
 
 `zsh/nebuladay.zsh` is the rice part of the shell only: `LS_COLORS` (also used by
 lsd for file names and by the completion menu), teal / sky / lilac colours
-for zsh-autosuggestions and zsh-syntax-highlighting, lsd / bat / nvim aliases
-and the starship prompt. Your own `~/.zshrc` stays private and sources it.
+for zsh-autosuggestions and zsh-syntax-highlighting, lsd / bat / nvim aliases,
+the lazygit theme file and the starship prompt. Your own `~/.zshrc` stays private and sources it.
 
 Needs zsh + [oh-my-zsh](https://ohmyz.sh/). `install.sh` clones the two
 plugins if missing and appends one `source` line to `~/.zshrc` (backup in
@@ -504,6 +741,26 @@ reboot
 ./nvim/install.sh
 mkdir -p ~/.config/btop/themes && cp btop/NebulaDay.theme ~/.config/btop/themes/
 
+./starship/install.sh
+./bat/install.sh
+./delta/install.sh          # then the [include] it prints, in ~/.gitconfig
+./lazygit/install.sh
+./helix/install.sh          # then theme = "nebuladay" in helix/config.toml
+
+# other terminals, one include line each (see Terminal extras above)
+./kitty/install.sh
+./alacritty/install.sh
+./wezterm/install.sh
+./ghostty/install.sh
+
+# gtk + qt apps (see GTK and Qt apps above)
+./gtk/install.sh
+./qt/install.sh             # then qt6ct → Color scheme → NebulaDay
+
+# obsidian + discord, both halves in one file (see above)
+./obsidian/install.sh ~/path/to/vault
+./discord/install.sh
+
 # wallpaper
 # Settings → Wallpaper → Add image → a file from backgrounds/ (see Icons and wallpaper above)
 
@@ -534,8 +791,11 @@ It backs up every file it replaces, then:
   The terminal scheme and icon theme are only replaced when the current one is
   not already a Nebula Day variant, so a dimmer text variant or another icon colour
   survives. Icons stay as they are until `./icons/install.sh` has run.
-- runs the fastfetch, lsd, Neovim and Claude Desktop installers and sets
-  btop's `color_theme`
+- runs the fastfetch, lsd, bat, starship, delta, lazygit, kitty, Alacritty,
+  WezTerm, Ghostty, Helix, GTK, Qt, Discord, Neovim and Claude Desktop
+  installers and sets btop's `color_theme`. The terminal, editor and Qt
+  installers only copy theme files; the include line you added once stays,
+  switch it by hand when the file name differs between rices
 - moves every other rice's LazyVim spec from `~/.config/nvim/lua/plugins/` to
   `~/.config/nvim/rice-off/` (LazyVim loads every spec there and the last
   colorscheme wins); your own specs stay
@@ -552,6 +812,7 @@ The GUI steps it cannot do are printed at the end:
 4. Settings → Wallpaper → a file from `backgrounds/`
 5. Claude Desktop: Ctrl+Shift+T → `cosmic-nebula`, Appearance → Light
 6. `exec zsh`, restart Neovim (`:Lazy clean` drops plugins only the old specs used)
+7. Obsidian: `./obsidian/install.sh <vault>`; delta: the `[include]` path in `~/.gitconfig`
 
 Skip 1 and 2 when that slot already holds Nebula Day. The first time on this rice,
 run [Setup](#setup) once for the fonts, icons and cursor.
@@ -576,6 +837,14 @@ puts the Pop cursor back.
 | [lsd](https://github.com/lsd-rs/lsd) | `ls` with icons and colours |
 | [fastfetch](https://github.com/fastfetch-cli/fastfetch) | System info |
 | [btop](https://github.com/aristocratos/btop) | Resource monitor |
+| [starship](https://starship.rs/) | Prompt |
+| [bat](https://github.com/sharkdp/bat) | `cat` with syntax highlighting |
+| [delta](https://github.com/dandavison/delta) | git diff pager |
+| [lazygit](https://github.com/jesseduffield/lazygit) | git TUI |
+| [Helix](https://helix-editor.com/) | Editor |
+| [kitty](https://sw.kovidgoyal.net/kitty/), [Alacritty](https://alacritty.org/), [WezTerm](https://wezterm.org/), [Ghostty](https://ghostty.org/) | Other terminals |
+| [qt6ct](https://github.com/trialuser02/qt6ct) | Qt colour scheme |
+| [Vencord](https://vencord.dev/) / [Vesktop](https://github.com/Vencord/Vesktop) | Discord theme host |
 | [cosmic-icon-themes](https://github.com/atraxsrc/cosmic-icon-themes) | Icon pack (Cosmic-NebulaDay), recolored from [Kanagawa icons](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme/tree/main/icons/Kanagawa) |
 | [Oxygen-Cursors](https://github.com/wo2ni/Oxygen-Cursors) | Cursor, recoloured to the icon colours |
 
