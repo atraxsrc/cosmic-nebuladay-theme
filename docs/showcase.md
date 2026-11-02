@@ -43,7 +43,7 @@ flowchart LR
 - [x] `./icons/install.sh` for the **Cosmic-NebulaDay** icons, `./cosmic/install.sh` for fonts and the terminal look
 - [x] `./zsh/install.sh`, `./lsd/install.sh`, `./fastfetch/install.sh`
 - [x] Cursor: Oxygen-NebulaDay-Teal
-- [x] Wallpaper: `backgrounds/nebuladay-gaze.png`
+- [x] Wallpaper: `backgrounds/nebuladay-anime.png`
 - [ ] Screenshot for the README
 
 ## The baseline every rice shares
