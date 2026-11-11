@@ -18,6 +18,6 @@ done
 
 cat <<'EOF'
 
-Done. Needs the Maple fonts and Cosmic-NebulaDay icons (./icons/install.sh) installed, and the Nebula Day
+Done. Needs the fonts (./fonts/install.sh) and Cosmic-NebulaDay icons (./icons/install.sh) installed, and the Nebula Day
 terminal scheme imported, or COSMIC falls back to its defaults.
 EOF
