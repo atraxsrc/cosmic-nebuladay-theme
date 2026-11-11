@@ -213,7 +213,7 @@ Firefox and the shell layer do not follow the toggle; those are per-rice files.
 | Where | Setting |
 |-------|---------|
 | Fonts | Interface `Maple Mono Normal` Light, monospace `Maple Mono Normal NFM` |
-| Icons | Cosmic-NebulaDay-Teal |
+| Icons | Cosmic-NebulaDay-Dark |
 | Windows | Minimize / maximize buttons hidden, theme applied to GNOME apps |
 | Terminal | Maple Mono 15 (weights 500 / bold 800 / dim 300), 77% opacity, no header bar, Nebula Day |
 
@@ -705,13 +705,13 @@ cp btop/NebulaDay.theme ~/.config/btop/themes/
 Icons: **Cosmic-NebulaDay**, the [Kanagawa icons](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme/tree/main/icons/Kanagawa)
 by Fausto Korpsvart recolored to this palette in
 [cosmic-icon-themes](https://github.com/atraxsrc/cosmic-icon-themes). Folders come in
-three colors: **Teal** ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61` (default), **Rose** ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B` and **Dark** ![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35` with teal symbols.
+three colors: **Teal** ![#186A61](https://placehold.co/12x12/186a61/186a61.png) `#186A61`, **Rose** ![#A8243B](https://placehold.co/12x12/a8243b/a8243b.png) `#A8243B` and **Dark** ![#2B2F35](https://placehold.co/12x12/2b2f35/2b2f35.png) `#2B2F35` (default) with teal symbols.
 
 ![Cosmic-NebulaDay folder colors](https://raw.githubusercontent.com/atraxsrc/cosmic-icon-themes/main/previews/Cosmic-NebulaDay.png)
 
 ```bash
-./icons/install.sh                       # Teal folders
-./icons/install.sh --variant Rose  # or Dark
+./icons/install.sh                 # Dark folders
+./icons/install.sh --variant Teal  # or Rose
 ```
 
 It downloads the pack from the latest cosmic-icon-themes release, checks its SHA256,
