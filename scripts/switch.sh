@@ -5,7 +5,7 @@
 # repo; only the block below differs.
 set -euo pipefail
 
-NAME="NebulaDay"                         # shown in messages
+NAME="Nebula Day"                        # shown in messages
 SLUG="nebuladay"                         # zsh/<slug>.zsh, nvim/lua/plugins/<slug>.lua
 MODE="light"                         # the COSMIC half this rice fills: dark or light
 RON="NebulaDay.ron"                      # desktop theme in cosmic/
